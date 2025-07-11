@@ -2,9 +2,7 @@ enum RouterPath {
   //최상위
   splash('/', '/'),
   home('/home', 'home'),
-  login('/login', 'login'),
-  search('/search', 'search'),
-  register('/register', 'register'),
+  futureProvider('/futureProvider', 'futureProvider'),
 
   // example 하위
   // radioButton('radio_button', 'radio_button'),
