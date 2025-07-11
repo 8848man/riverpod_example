@@ -5,25 +5,27 @@ class ExampleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text('Riverpod Example'),
-        heightBox(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const SizedBox(
-              height: 200,
-              width: 200,
-              child: BasicProvierWidgetContents(),
-            ),
-            // const BasicProviderWidget(),
-            widthBox(),
-            const FutureProviderWidget(),
-          ],
-        ),
-      ],
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text('Riverpod Example'),
+          heightBox(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 200,
+                width: 200,
+                child: BasicProvierWidgetContents(),
+              ),
+              // const BasicProviderWidget(),
+              widthBox(),
+              const FutureProviderWidget(),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

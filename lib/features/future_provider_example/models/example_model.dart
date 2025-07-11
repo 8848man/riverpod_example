@@ -9,6 +9,9 @@ class PersonData with _$PersonData {
     required Person person,
     @Default(PersonWithDefault()) PersonWithDefault personWithDefault,
   }) = _PersonData;
+
+  factory PersonData.fromJson(Map<String, dynamic> json) =>
+      _$PersonDataFromJson(json);
 }
 
 @freezed

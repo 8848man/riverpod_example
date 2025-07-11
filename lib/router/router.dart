@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:riverpod_example/features/future_provider_example/lib.dart';
 import 'package:riverpod_example/features/home/screens/home.dart';
 import 'package:riverpod_example/features/splash/screen/splash.dart';
 import 'package:riverpod_example/router/router_path.dart';
@@ -11,7 +12,8 @@ Widget fadeTransition(
   Animation<double> animation,
   Animation<double> secondaryAnimation,
   Widget child,
-) => FadeTransition(opacity: animation, child: child);
+) =>
+    FadeTransition(opacity: animation, child: child);
 
 Widget slideTransition(context, animation, secondaryAnimation, child) =>
     SlideTransition(
@@ -53,12 +55,21 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: RouterPath.home.path,
         name: RouterPath.home.name,
-        pageBuilder:
-            (context, state) => CustomTransitionPage<void>(
-              key: state.pageKey,
-              child: const Home(),
-              transitionsBuilder: fadeTransition,
-            ),
+        pageBuilder: (context, state) => CustomTransitionPage<void>(
+          key: state.pageKey,
+          child: const Home(),
+          transitionsBuilder: fadeTransition,
+        ),
+      ),
+
+      GoRoute(
+        path: RouterPath.futureProvider.path,
+        name: RouterPath.futureProvider.name,
+        pageBuilder: (context, state) => CustomTransitionPage<void>(
+          key: state.pageKey,
+          child: const ExampleScreen(),
+          transitionsBuilder: fadeTransition,
+        ),
       ),
 
       // GoRoute(
